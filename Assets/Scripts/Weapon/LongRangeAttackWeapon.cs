@@ -1,16 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class LongRangeAttackWeapon : MonoBehaviour
+public class LongRangeAttackWeapon : WeaponBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Attack()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
