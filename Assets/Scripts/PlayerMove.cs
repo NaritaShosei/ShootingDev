@@ -15,6 +15,24 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         transform.position += _input * _moveSpeed * Time.deltaTime;
+
+        // 元の z を保持
+        float originalZ = transform.position.z;
+
+        // ビューポート変換
+        Vector3 viewPos = _camera.WorldToViewportPoint(transform.position);
+
+        // 画面内にClamp
+        viewPos.x = Mathf.Clamp(viewPos.x, _moveLimit, 1f - _moveLimit);
+        viewPos.y = Mathf.Clamp(viewPos.y, _moveLimit, 1f - _moveLimit);
+
+        // ワールド座標に戻す
+        Vector3 worldPos = _camera.ViewportToWorldPoint(viewPos);
+
+        // z を元に戻す（前後のズレ防止）
+        worldPos.z = originalZ;
+
+        transform.position = worldPos;
     }
 
     private void Movement(Vector2 moveInput)
