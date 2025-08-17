@@ -9,7 +9,7 @@ public class WeaponManager : MonoBehaviour
     private WeaponBase _currentWeapon;
     public WeaponBase CurrentWeapon => _currentWeapon;
 
-    private void Start()
+    private void Awake()
     {
         ServiceLocator.Set(this);
 

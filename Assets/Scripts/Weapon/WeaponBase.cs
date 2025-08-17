@@ -13,5 +13,5 @@ public abstract class WeaponBase : MonoBehaviour
     }
 
     protected virtual void OnInitialize() { }
-    protected abstract void Attack();
+    public abstract void Attack();
 }

@@ -2,8 +2,8 @@
 
 public class LongRangeAttackWeapon : WeaponBase
 {
-    protected override void Attack()
+    public override void Attack()
     {
-
+        Debug.Log("攻撃中");
     }
 }
