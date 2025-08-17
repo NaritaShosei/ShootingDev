@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class PlayerData 
+public class PlayerData
 {
     [SerializeField] private PlayerLoadout _currentLoadout = new PlayerLoadout();
     [SerializeField] private List<int> _unlockedWeaponIDs = new List<int>();
@@ -20,53 +20,24 @@ public class PlayerData
     }
 
     // 装備変更
-    public bool EquipWeapon(int weaponId, WeaponSlot slot)
+    public bool EquipWeapon(int weaponId)
     {
         if (!_unlockedWeaponIDs.Contains(weaponId)) return false;
 
-        switch (slot)
-        {
-            case WeaponSlot.Primary:
-                _currentLoadout.PrimaryWeaponId = weaponId;
-                break;
-            case WeaponSlot.Secondary:
-                _currentLoadout.SecondaryWeaponId = weaponId;
-                break;
-            case WeaponSlot.Special:
-                _currentLoadout.SpecialWeaponId = weaponId;
-                break;
-        }
+        _currentLoadout.PrimaryWeaponId = weaponId;
         return true;
     }
 }
 
-public enum WeaponSlot
-{
-    Primary,
-    Secondary,
-    Special
-}
 
 [System.Serializable]
 public class PlayerLoadout
 {
     [SerializeField] private int _primaryWeaponId;      // メイン武器ID
-    [SerializeField] private int _secondaryWeaponId;    // サブ武器ID
-    [SerializeField] private int _specialWeaponId;      // 特殊武器ID
 
     public int PrimaryWeaponId
     {
         get => _primaryWeaponId;
         set => _primaryWeaponId = value;
-    }
-    public int SecondaryWeaponId
-    {
-        get => _secondaryWeaponId;
-        set => _secondaryWeaponId = value;
-    }
-    public int SpecialWeaponId
-    {
-        get => _specialWeaponId;
-        set => _specialWeaponId = value;
     }
 }
