@@ -5,7 +5,6 @@ public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private WeaponDatabase _weaponDatabase;
     [SerializeField] private Transform _weaponParent;
-    [SerializeField] private Transform _weaponPosition;
     private PlayerData _playerData;
     private WeaponBase _currentWeapon;
     public WeaponBase CurrentWeapon => _currentWeapon;
@@ -21,6 +20,13 @@ public class WeaponManager : MonoBehaviour
         SpawnEquippedWeapons();
     }
 
+    [ContextMenu("再度取得")]
+    private void Load()
+    {
+        _playerData = SaveLoadService.Load<PlayerData>();
+    }
+
+    [ContextMenu("武器の反映")]
     private void SpawnEquippedWeapons()
     {
         var loadout = _playerData.CurrentLoadout;
@@ -35,16 +41,16 @@ public class WeaponManager : MonoBehaviour
     private void SpawnWeapon(int weaponId)
     {
         var weaponData = _weaponDatabase.GetWeapon(weaponId);
-        if (weaponData?.WeaponPrefab == null) return;
+        if (weaponData?.WeaponPrefab == null) { Debug.LogWarning("プレハブが設定されていません"); return; }
 
         var weaponObj = Instantiate(weaponData.WeaponPrefab, _weaponParent);
         var weaponComponent = weaponObj.GetComponent<WeaponBase>();
 
-        if (weaponComponent != null)
-        {
-            weaponComponent.Initialize(weaponData);
-            _currentWeapon = weaponComponent;
-        }
+        if (!weaponComponent) { Debug.LogWarning("プレハブにWeaponBaseがアタッチされていません"); return; }
+
+        weaponComponent.Initialize(weaponData);
+        _currentWeapon = weaponComponent;
+
     }
 
 }
