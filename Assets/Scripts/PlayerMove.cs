@@ -37,6 +37,6 @@ public class PlayerMove : MonoBehaviour
 
     private void Movement(Vector2 moveInput)
     {
-        _input = moveInput;
+        _input = moveInput.normalized;
     }
 }

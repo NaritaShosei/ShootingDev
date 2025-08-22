@@ -17,5 +17,5 @@ MonoBehaviour:
   _weaponIcon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _attackPower: 10
   _attackRate: 2
-  _range: 0
+  _range: 10
   _weaponPrefab: {fileID: 1517193342232219411, guid: 13c702d11089937499f7a5f284b5127f, type: 3}
