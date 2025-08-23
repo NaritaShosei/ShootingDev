@@ -438,6 +438,8 @@ GameObject:
   - component: {fileID: 1284179368}
   - component: {fileID: 1284179367}
   - component: {fileID: 1284179370}
+  - component: {fileID: 1284179371}
+  - component: {fileID: 1284179372}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -501,6 +503,62 @@ MonoBehaviour:
     _currentLoadout:
       _primaryWeaponId: 782
     _unlockedWeaponIDs: 0e030000
+--- !u!114 &1284179371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284179366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe96c9e589ad42b41a9c0a031e928ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiCanvas: {fileID: 0}
+  _crosshairImage: {fileID: 0}
+  _normalCrosshair: {fileID: 21300000, guid: cb70b609425ce074da6715dabdc29b6e, type: 3}
+  _enemyCrosshair: {fileID: 0}
+  _normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _enemyColor: {r: 1, g: 0, b: 0, a: 1}
+  _normalSize: 196
+  _enemySize: 256
+  _pulseIntensity: 0.5
+  _pulseSpeed: 8
+  _sizeChangeSpeed: 8
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  _maxDistance: 50
+  _ignoreTags:
+  - Player
+  - Weapon
+  - Bullet
+  _enemyTag: Enemy
+  _previewInEditor: 0
+--- !u!114 &1284179372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284179366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ea696107fae25499353c365b5f6eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPrefabs:
+  - {fileID: 5331078470734868285, guid: d78f33e3cec17fb4990bb5f979c80531, type: 3}
+  _spawnInterval: 3
+  _maxEnemies: 10
+  _spawnZPosition: 20
+  _topLeftCorner: {fileID: 0}
+  _topRightCorner: {fileID: 0}
+  _bottomLeftCorner: {fileID: 0}
+  _bottomRightCorner: {fileID: 0}
+  _defaultAreaSize: {x: 15, y: 8}
+  _defaultAreaCenter: {x: 0, y: 3, z: 20}
 --- !u!1001 &7414408365895454297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -551,6 +609,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8108103381515679426, guid: e9f43bd7f204b31498438d58786c6c4c, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108103381515679426, guid: e9f43bd7f204b31498438d58786c6c4c, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

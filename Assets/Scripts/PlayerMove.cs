@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -39,4 +38,14 @@ public class PlayerMove : MonoBehaviour
     {
         _input = moveInput.normalized;
     }
+}
+
+// プレイヤーの体力管理インターフェース（参考）
+public interface IPlayerHealth
+{
+    void TakeDamage(float damage);
+    void Heal(float amount);
+    float Health { get; }
+    float MaxHealth { get; }
+    bool IsAlive { get; }
 }

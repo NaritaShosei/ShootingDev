@@ -16,6 +16,9 @@ public class WeaponManager : MonoBehaviour
         // プレイヤーデータを取得（セーブ管理クラスから）
         _playerData = SaveLoadService.Load<PlayerData>();
 
+    }
+    private void Start()
+    {
         // 装備中の武器を生成
         SpawnEquippedWeapons();
     }
