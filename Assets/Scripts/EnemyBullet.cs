@@ -51,12 +51,6 @@ public class EnemyBullet : MonoBehaviour
             return;
         }
 
-        // 壁や障害物にヒット
-        if (other.CompareTag("Wall") || other.CompareTag("Obstacle"))
-        {
-            Destroy(gameObject);
-            return;
-        }
 
         // 敵や敵の弾丸は無視
         if (other.CompareTag("Enemy") || other.CompareTag("EnemyBullet"))

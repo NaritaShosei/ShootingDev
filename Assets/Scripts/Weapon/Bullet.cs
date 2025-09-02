@@ -74,13 +74,6 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        // 壁や障害物にヒット
-        if (other.CompareTag("Wall") || other.CompareTag("Obstacle"))
-        {
-            Debug.Log("障害物に衝突しました");
-            Destroy(gameObject);
-            return;
-        }
 
         // プレイヤー、武器、他の弾丸は無視
         if (other.CompareTag("Player") || other.CompareTag("Weapon") || other.CompareTag("Bullet"))

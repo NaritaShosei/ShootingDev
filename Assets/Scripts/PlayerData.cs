@@ -22,7 +22,7 @@ public class PlayerData
     // 装備変更
     public bool EquipWeapon(int weaponId)
     {
-        if (!_unlockedWeaponIDs.Contains(weaponId)) return false;
+        // if (!_unlockedWeaponIDs.Contains(weaponId)) return false;
 
         _currentLoadout.PrimaryWeaponId = weaponId;
         return true;

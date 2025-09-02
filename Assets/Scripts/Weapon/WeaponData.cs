@@ -11,7 +11,7 @@ public class WeaponData : ScriptableObject
     [Header("性能")]
     [SerializeField] private float _attackPower = 1;
     [SerializeField] private float _attackRate = 1;
-    [SerializeField] private float _range;
+    [SerializeField] private float _range = 10;
 
     [Header("プレハブ")]
     [SerializeField] private GameObject _weaponPrefab;
