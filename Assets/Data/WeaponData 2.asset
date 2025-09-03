@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0e454e5d56117f4f8805418ac882b95, type: 3}
-  m_Name: WeaponData 1
+  m_Name: WeaponData 2
   m_EditorClassIdentifier: 
-  _weaponID: 789
-  _weaponName: "\u30CE\u30FC\u30DE\u30EB\u30B7\u30E5\u30FC\u30BF\u30FC"
+  _weaponID: 0
+  _weaponName: "\u30C7\u30D5\u30A9\u30EB\u30C8\u30B7\u30E5\u30FC\u30BF\u30FC"
   _weaponIcon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _weaponMoney: 5000
   _attackPower: 10
