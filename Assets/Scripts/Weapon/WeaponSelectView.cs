@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,10 +11,14 @@ public class WeaponSelectView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private WeaponExplanation _explanation;
     private WeaponCell _currentCell;
     private List<WeaponCell> _cells = new();
+    [SerializeField] private BasicButton _exitButton;
+    [Header("アニメーション設定")]
+    [SerializeField] private float _animationDuration = 0.2f;
 
     private void Start()
     {
         SetUI();
+        _exitButton.OnClick += () => OnClick(0);
     }
 
     private void SetUI()
@@ -47,5 +52,13 @@ public class WeaponSelectView : MonoBehaviour, IPointerClickHandler
             _currentCell.Select();
             SetExplanation(_currentCell.Id);
         }
+    }
+    /// <summary>
+    /// ボタンクリック時のアニメーション
+    /// </summary>
+    public void OnClick(int target)
+    {
+        transform.DOScaleY(target, _animationDuration).
+            SetEase(Ease.OutElastic);
     }
 }
