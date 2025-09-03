@@ -7,6 +7,7 @@ public class WeaponSelectView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private WeaponDatabase _weaponDatabase;
     [SerializeField] private WeaponCell _weaponCell;
     [SerializeField] private Transform _cellParent;
+    [SerializeField] private WeaponExplanation _explanation;
     private WeaponCell _currentCell;
     private List<WeaponCell> _cells = new();
 
@@ -25,6 +26,13 @@ public class WeaponSelectView : MonoBehaviour, IPointerClickHandler
         }
         _currentCell = _cells[0];
         _currentCell.Select();
+        SetExplanation(_currentCell.Id);
+    }
+
+    private void SetExplanation(int id)
+    {
+        var data = _weaponDatabase.GetWeapon(id);
+        _explanation.Set(data.WeaponName, data.AttackPower, data.AttackRate);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -37,6 +45,7 @@ public class WeaponSelectView : MonoBehaviour, IPointerClickHandler
             ServiceLocator.Get<WeaponSelector>().SelectWeapon(cell.Id);
             _currentCell = cell;
             _currentCell.Select();
+            SetExplanation(_currentCell.Id);
         }
     }
 }
