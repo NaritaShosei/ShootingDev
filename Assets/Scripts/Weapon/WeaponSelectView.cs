@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class WeaponSelectView : MonoBehaviour
+public class WeaponSelectView : MonoBehaviour,IPointerClickHandler
 {
     [SerializeField] private WeaponDatabase _weaponDatabase;
     [SerializeField] private WeaponCell _weaponCell;
@@ -17,6 +18,14 @@ public class WeaponSelectView : MonoBehaviour
         {
             var cell = Instantiate(_weaponCell, _cellParent);
             cell.Initialize(data.WeaponIcon, data.WeaponMoney,data.WeaponID);
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.pointerCurrentRaycast.gameObject.TryGetComponent(out WeaponCell cell))
+        {
+            ServiceLocator.Get<WeaponSelector>().SelectWeapon(cell.Id);
         }
     }
 }
