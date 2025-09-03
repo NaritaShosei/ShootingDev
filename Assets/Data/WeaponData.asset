@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponData
   m_EditorClassIdentifier: 
   _weaponID: 782
-  _weaponName: "\u30CE\u30FC\u30DE\u30EB\u30B7\u30E5\u30FC\u30BF\u30FC"
+  _weaponName: "\u30B4\u30C3\u30C9\u30B7\u30E5\u30FC\u30BF\u30FC"
   _weaponIcon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _weaponMoney: 9999999
   _attackPower: 10

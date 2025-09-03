@@ -15,8 +15,8 @@ MonoBehaviour:
   _weaponID: 0
   _weaponName: "\u30C7\u30D5\u30A9\u30EB\u30C8\u30B7\u30E5\u30FC\u30BF\u30FC"
   _weaponIcon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _weaponMoney: 5000
+  _weaponMoney: 0
   _attackPower: 10
   _attackRate: 2
   _range: 10
-  _weaponPrefab: {fileID: 1517193342232219411, guid: a7cdc12e8c694814fbd18978b2dd1f53, type: 3}
+  _weaponPrefab: {fileID: 1517193342232219411, guid: 5f898c7c560953e42adf38e32fee0727, type: 3}

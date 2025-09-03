@@ -501,8 +501,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerData:
     _currentLoadout:
-      _primaryWeaponId: 782
-    _unlockedWeaponIDs: 0e030000
+      _primaryWeaponId: 0
+    _unlockedWeaponIDs: 
 --- !u!114 &1284179371
 MonoBehaviour:
   m_ObjectHideFlags: 0
