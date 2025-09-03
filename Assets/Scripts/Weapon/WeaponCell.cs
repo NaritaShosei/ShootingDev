@@ -5,15 +5,14 @@ using UnityEngine.UI;
 public class WeaponCell : MonoBehaviour
 {
     [SerializeField] private Image _icon;
-    [SerializeField] private TMP_Text _nameText;
-    [SerializeField] private TMP_Text _powerText;
-    [SerializeField] private TMP_Text _rateText;
+    [SerializeField] private TMP_Text _moneyText;
+    private int _id;
+    public int Id => _id;
 
-    public void Initialize(Sprite icon, string name, float power, float rate)
+    public void Initialize(Sprite icon, int money, int id)
     {
         _icon.sprite = icon;
-        _nameText.text = name;
-        _powerText.text = $"{power}";
-        _rateText.text = $"{rate}";
+        _moneyText.text = $"{money}";
+        _id = id;
     }
 }

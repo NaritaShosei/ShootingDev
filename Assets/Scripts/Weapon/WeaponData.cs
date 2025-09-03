@@ -7,6 +7,7 @@ public class WeaponData : ScriptableObject
     [SerializeField] private int _weaponID;
     [SerializeField] private string _weaponName;
     [SerializeField] private Sprite _weaponIcon;
+    [SerializeField] private int _weaponMoney;
 
     [Header("性能")]
     [SerializeField] private float _attackPower = 1;
@@ -18,6 +19,7 @@ public class WeaponData : ScriptableObject
     public int WeaponID => _weaponID;
     public string WeaponName => _weaponName;
     public Sprite WeaponIcon => _weaponIcon;
+    public int WeaponMoney => _weaponMoney;
     public float AttackPower => _attackPower;
     public float AttackRate => _attackRate;
     public float Range => _range;

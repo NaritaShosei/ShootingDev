@@ -16,7 +16,7 @@ public class WeaponSelectView : MonoBehaviour
         foreach (var data in _weaponDatabase.GetAllWeapons())
         {
             var cell = Instantiate(_weaponCell, _cellParent);
-            cell.Initialize(data.WeaponIcon, data.WeaponName, data.AttackPower, data.AttackRate);
+            cell.Initialize(data.WeaponIcon, data.WeaponMoney,data.WeaponID);
         }
     }
 }
