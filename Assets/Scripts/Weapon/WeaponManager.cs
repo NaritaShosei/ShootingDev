@@ -35,10 +35,7 @@ public class WeaponManager : MonoBehaviour
         var loadout = _playerData.CurrentLoadout;
 
         // メイン武器生成
-        if (loadout.PrimaryWeaponId > 0)
-        {
-            SpawnWeapon(loadout.PrimaryWeaponId);
-        }
+        SpawnWeapon(loadout.PrimaryWeaponId);
     }
 
     private void SpawnWeapon(int weaponId)
