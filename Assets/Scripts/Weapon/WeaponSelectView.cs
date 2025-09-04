@@ -12,6 +12,7 @@ public class WeaponSelectView : MonoBehaviour, IPointerClickHandler
     private WeaponCell _currentCell;
     private List<WeaponCell> _cells = new();
     [SerializeField] private BasicButton _exitButton;
+    [SerializeField] private BasicButton _openButton;
     [Header("アニメーション設定")]
     [SerializeField] private float _animationDuration = 0.2f;
 
@@ -19,6 +20,7 @@ public class WeaponSelectView : MonoBehaviour, IPointerClickHandler
     {
         SetUI();
         _exitButton.OnClick += () => OnClick(0);
+        _openButton.OnClick += () => OnClick(1);
     }
 
     private void SetUI()

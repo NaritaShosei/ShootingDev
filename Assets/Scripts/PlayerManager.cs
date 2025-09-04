@@ -24,5 +24,9 @@ public class PlayerManager : MonoBehaviour, IPlayerHealth
     public void TakeDamage(float damage)
     {
         _currentHealth -= damage;
+        if (!IsAlive)
+        {
+            SceneChanger.FreeLoadScene("OutGame");
+        }
     }
 }
